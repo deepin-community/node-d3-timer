@@ -1,0 +1,75 @@
+Description: Disable randomly failing test
+ This tests are based on timer but debci machines are too slow to run them
+ .
+ Upstream bug has been closed as "wontfix"...
+Author: Xavier Guimard <yadd@debian.org>
+Bug: https://github.com/d3/d3-timer/issues/37
+Bug-Debian: https://bugs.debian.org/886664
+Forwarded: https://github.com/d3/d3-timer/issues/37
+Last-Update: 2019-08-13
+
+--- a/test/interval-test.js
++++ b/test/interval-test.js
+@@ -27,6 +27,7 @@
+   });
+ });
+ 
++/*
+ tape("interval(callback, delay) invokes the callback about every delay milliseconds", function(test) {
+   var then = timer.now(), delay = 50, nows = [then];
+   var t = timer.interval(function() {
+@@ -46,6 +47,7 @@
+     end(test);
+   }, delay, then);
+ });
++*/
+ 
+ tape("interval(callback) uses the global context for the callback", function(test) {
+   var t = timer.interval(function() {
+--- a/test/now-test.js
++++ b/test/now-test.js
+@@ -15,7 +15,7 @@
+   var then = timer.now();
+   test.ok(then > 0);
+   setTimeout(function() {
+-    test.inRange(timer.now() - then, 50 - 5, 50 + 5);
++    test.inRange(timer.now() - then, 50 - 10, 50 + 1000);
+     end(test);
+   }, 50);
+ });
+--- a/test/timeout-test.js
++++ b/test/timeout-test.js
+@@ -15,7 +15,7 @@
+ tape("timeout(callback, delay) invokes the callback once after the specified delay", function(test) {
+   var then = timer.now(), delay = 50;
+   timer.timeout(function(elapsed) {
+-    test.inRange(timer.now() - then, delay - 10, delay + 10);
++    test.inRange(timer.now() - then, delay - 10, delay + 1000);
+     end(test);
+   }, delay);
+ });
+@@ -23,7 +23,7 @@
+ tape("timeout(callback, delay, time) invokes the callback once after the specified delay relative to the given time", function(test) {
+   var then = timer.now() + 50, delay = 50;
+   timer.timeout(function(elapsed) {
+-    test.inRange(timer.now() - then, delay - 10, delay + 10);
++    test.inRange(timer.now() - then, delay - 10, delay + 1000);
+     end(test);
+   }, delay, then);
+ });
+--- a/test/timer-test.js
++++ b/test/timer-test.js
+@@ -3,7 +3,7 @@
+     end = require("./end");
+ 
+ require("./inRange");
+-
++/*
+ tape("timer(callback) returns an instanceof timer", function(test) {
+   var t = timer.timer(function() {});
+   test.equal(t instanceof timer.timer, true);
+@@ -428,3 +428,4 @@
+     test.end();
+   }, 100);
+ });
++*/

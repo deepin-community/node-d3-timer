@@ -1,0 +1,83 @@
+node-d3-timer (1.0.10-1) unstable; urgency=medium
+
+  [ Xavier Guimard ]
+  * Update disable-randomly-failing-test.patch comment
+
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+  * Bump debhelper from old 11 to 12.
+  * Set debhelper-compat version in Build-Depends.
+  * Set upstream metadata fields: Bug-Submit.
+  * Remove obsolete fields Contact, Name from debian/upstream/metadata (already
+    present in machine-readable debian/copyright).
+  * Update standards version to 4.5.0, no changes needed.
+
+  [ Pirate Praveen ]
+  * New upstream version 1.0.10
+  * Bump Standards-Version to 4.5.1 (no changes needed)
+  * Drop unused debian/webpack.config.js
+  * Use node-rollup-plugin-terser (now available in the archive)
+  * Enable nocheck build profile
+  * Use pkg-js-tools auto install
+
+ -- Pirate Praveen <praveen@debian.org>  Wed, 16 Dec 2020 14:38:16 +0530
+
+node-d3-timer (1.0.9-2) unstable; urgency=medium
+
+  * Reupload to unstable
+
+ -- Pirate Praveen <praveen@debian.org>  Sun, 07 Jul 2019 13:04:07 +0530
+
+node-d3-timer (1.0.9-1) experimental; urgency=medium
+
+  * New upstream release 1.0.9
+  * Drop build dependency on dh-buidinfo
+  * Switch to rollup from webpack (rollup is in main now)
+  * Switch to pkg-js-tools for tests
+
+ -- Pirate Praveen <praveen@debian.org>  Sat, 22 Jun 2019 16:08:04 +0530
+
+node-d3-timer (1.0.7-5) unstable; urgency=medium
+
+  * Team upload
+  * Disable more test due to debci poor perf (Closes: #886664)
+
+ -- Xavier Guimard <yadd@debian.org>  Sat, 26 Jan 2019 08:44:29 +0100
+
+node-d3-timer (1.0.7-4) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Pirate Praveen ]
+  * remove reference to contrib
+
+  [ Xavier Guimard ]
+  * Remove timeout based tests (Closes: #886664)
+  * Remove build/ dir on clean
+  * Bump debheper compatibility level to 11
+  * Declare compliance with policy 4.3.0
+  * Update VCS fields to salsa
+  * Fix debian/copyright
+  * Remove useless autopkgtest test
+  * Add upstream/metadata
+  * Ignore tests in nocheck is set
+
+ -- Xavier Guimard <yadd@debian.org>  Wed, 23 Jan 2019 13:26:09 +0100
+
+node-d3-timer (1.0.7-3) unstable; urgency=medium
+
+  * Use webpack to build umd module like upstream
+
+ -- Pirate Praveen <praveen@debian.org>  Sat, 06 Jan 2018 10:50:03 +0530
+
+node-d3-timer (1.0.7-2) unstable; urgency=medium
+
+  * Build using babel and move to main (Closes: #877216)
+
+ -- Pirate Praveen <praveen@debian.org>  Mon, 02 Oct 2017 10:19:26 +0530
+
+node-d3-timer (1.0.7-1) unstable; urgency=low
+
+  * Initial release (Closes: #874544)
+
+ -- Pirate Praveen <praveen@debian.org>  Thu, 07 Sep 2017 13:09:58 +0530
