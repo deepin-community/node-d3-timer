@@ -1,24 +1,25 @@
 Source: node-d3-timer
-Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
-Uploaders: Pirate Praveen <praveen@debian.org>
 Section: javascript
 Priority: optional
-Build-Depends: debhelper-compat (= 12),
-               nodejs,
-               pkg-js-tools,
-               node-tape <!nocheck>,
-               rollup,
-               node-rollup-plugin-terser,
-Standards-Version: 4.5.1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Pirate Praveen <praveen@debian.org>
+Build-Depends: debhelper-compat (= 13)
+ , dh-sequence-nodejs
+ , node-rollup-plugin-terser
+ , node-tape <!nocheck>
+ , rollup
+Standards-Version: 4.6.2
 Vcs-Browser: https://salsa.debian.org/js-team/node-d3-timer
 Vcs-Git: https://salsa.debian.org/js-team/node-d3-timer.git
 Homepage: https://d3js.org/d3-timer/
 Testsuite: autopkgtest-pkg-nodejs
+Rules-Requires-Root: no
 
 Package: node-d3-timer
 Architecture: all
-Depends: ${misc:Depends},
-         nodejs
+Depends: ${misc:Depends}
+Provides: ${nodejs:Provides}
+Multi-Arch: foreign
 Description: efficient queue to manage thousands of concurrent animations
  This module provides an efficient queue capable of managing thousands of
  concurrent animations, while guaranteeing consistent, synchronized timing with
